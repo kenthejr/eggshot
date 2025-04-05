@@ -1,6 +1,6 @@
 use bevy::prelude::*;
 use crate::entities::player::Player;
-
+use crate::components::velocity::Velocity;
 
 pub fn spawn_scene(
     mut commands: Commands,
@@ -32,6 +32,7 @@ pub fn spawn_scene(
 
     commands.spawn((
         Player,
+        Velocity::default(),
         Mesh3d(egg_mesh),
         MeshMaterial3d(egg_material),
         Transform {
