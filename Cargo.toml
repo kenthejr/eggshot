@@ -1,6 +1,21 @@
 [package]
-name = "eggs"
+name = "eggshot"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+bevy = "0.15.3"
+
+[profile.dev]
+opt-level = 1                # Slightly optimized debug builds (much faster than 0)
+debug = true
+overflow-checks = false
+incremental = true
+
+[profile.dev.package."*"]
+opt-level = 2                # Bevy and dependencies run faster
+
+[profile.release]
+opt-level = "z"              # Optimize for size (or use 3 for speed)
+lto = true                   # Link-time optimization for final build
+codegen-units = 1            # Better performance but slower compile

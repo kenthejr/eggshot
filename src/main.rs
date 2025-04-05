@@ -1,3 +1,7 @@
+mod app;
+mod camera;
+mod scene;
+
 fn main() {
-    println!("Hello, world!");
+    app::build_app().run();
 }
