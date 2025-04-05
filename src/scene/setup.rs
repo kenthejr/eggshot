@@ -1,4 +1,6 @@
 use bevy::prelude::*;
+use crate::entities::player::Player;
+
 
 pub fn spawn_scene(
     mut commands: Commands,
@@ -29,6 +31,7 @@ pub fn spawn_scene(
     });
 
     commands.spawn((
+        Player,
         Mesh3d(egg_mesh),
         MeshMaterial3d(egg_material),
         Transform {
@@ -38,7 +41,7 @@ pub fn spawn_scene(
         },
         GlobalTransform::default(),
     ));
-    
+
     // Light
     commands.spawn((
         DirectionalLight {
