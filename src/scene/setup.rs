@@ -19,20 +19,26 @@ pub fn spawn_scene(
         GlobalTransform::default(),
     ));
 
-    // Cube
-    let cube_mesh = meshes.add(Mesh::from(Cuboid::default()));
-    let cube_material = materials.add(StandardMaterial {
-        base_color: Color::srgb(0.8, 0.3, 0.3),
+    // Egg (stretched sphere)
+    // Egg (stretched sphere)
+    let egg_mesh = meshes.add(Mesh::from(Sphere { radius: 0.5 }));
+    let egg_material = materials.add(StandardMaterial {
+        base_color: Color::srgb(0.95, 0.9, 0.85),
+        perceptual_roughness: 0.7,
         ..default()
     });
 
     commands.spawn((
-        Mesh3d(cube_mesh),
-        MeshMaterial3d(cube_material),
-        Transform::from_xyz(0.0, 0.5, 0.0),
+        Mesh3d(egg_mesh),
+        MeshMaterial3d(egg_material),
+        Transform {
+            translation: Vec3::new(0.0, 0.5, 0.0),
+            scale: Vec3::new(0.8, 1.2, 0.8), // squashed X/Z, stretched Y = egg shape
+            ..default()
+        },
         GlobalTransform::default(),
     ));
-
+    
     // Light
     commands.spawn((
         DirectionalLight {
