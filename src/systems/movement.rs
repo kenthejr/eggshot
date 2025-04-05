@@ -15,7 +15,7 @@ pub fn player_movement_input(
 ) {
     let delta = time.delta().as_secs_f32();
 
-    for (mut transform, mut velocity) in &mut query {
+    for (mut transform, _velocity) in &mut query {
         let mut direction = Vec3::ZERO;
 
         if keyboard_input.pressed(KeyCode::KeyW) {
@@ -46,7 +46,7 @@ pub fn apply_gravity(
 ) {
     let delta = time.delta().as_secs_f32();
 
-    for (mut transform, _velocity) in &mut query {
+    for (mut transform, mut velocity) in &mut query {
         velocity.linvel.y += GRAVITY * delta;
         transform.translation += velocity.linvel * delta;
 
