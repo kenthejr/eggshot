@@ -33,10 +33,11 @@ pub fn player_movement_input(
 
         if direction.length_squared() > 0.0 {
             direction = direction.normalize();
+            // Transform the movement direction by the player's rotation
+            let movement = transform.rotation * direction;
+            // Apply horizontal movement (XZ only)
+            transform.translation += Vec3::new(movement.x, 0.0, movement.z) * MOVE_SPEED * delta;
         }
-
-        // Apply horizontal movement (XZ only)
-        transform.translation += direction * MOVE_SPEED * delta;
     }
 }
 

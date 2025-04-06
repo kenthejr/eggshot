@@ -1,4 +1,4 @@
-mod setup;
+pub mod setup;
 mod follow;
 pub use setup::spawn_camera;
 pub use follow::follow_player_camera;

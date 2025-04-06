@@ -7,6 +7,6 @@ pub struct ScenePlugin;
 
 impl Plugin for ScenePlugin {
     fn build(&self, app: &mut App) {
-        app.add_systems(Startup, spawn_scene);
+        app.add_systems(PreStartup, spawn_scene);
     }
 }

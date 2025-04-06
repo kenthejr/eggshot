@@ -75,7 +75,7 @@ pub struct InStream(pub VecDeque<GameEvent>);
 
 #[derive(Resource)]
 pub struct FinalStream(pub VecDeque<GameEvent>);
-
+```
 
 ## File Structure
 

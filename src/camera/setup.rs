@@ -1,5 +1,6 @@
 use bevy::prelude::*;
 use bevy::prelude::{Mesh3d, MeshMaterial3d};
+use crate::entities::player::Player;
 
 #[derive(Component)]
 pub struct CameraRoot;
@@ -8,24 +9,33 @@ pub fn spawn_camera(
     mut commands: Commands,
     mut meshes: ResMut<Assets<Mesh>>,
     mut materials: ResMut<Assets<StandardMaterial>>,
+    player_query: Query<Entity, With<Player>>,
 ) {
+    let Ok(player_entity) = player_query.get_single() else {
+        warn!("Player not found for attaching camera");
+        return;
+    };
+
+    // Spawn the camera pitch root (CameraRoot)
     let camera_root = commands
         .spawn((
             CameraRoot,
-            Transform::from_xyz(0.0, 1.0, 0.0), // At egg head height
+            Transform::from_xyz(0.0, 1.0, 0.0), // head height
             GlobalTransform::default(),
         ))
         .id();
 
+    // Spawn the actual camera
     let camera = commands
         .spawn((
             Camera3d::default(),
-            Transform::from_xyz(0.0, 0.6, 0.0), // Slightly forward from root
+            Transform::from_xyz(0.0, 0.6, 0.0),
             GlobalTransform::default(),
         ))
         .id();
 
-    // Attach camera to root
+    // Parent structure: Player → CameraRoot → Camera → Gun
+    commands.entity(player_entity).add_child(camera_root);
     commands.entity(camera_root).add_child(camera);
 
     // Add a gun (placeholder cube) attached to the camera
