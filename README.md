@@ -1,6 +1,12 @@
 # Eggshot
 
+<p align="center">
+  <img src="assets/images/eggshot_logo.png" alt="Eggshot Logo" width="300"/>
+</p>
+
 A 3D first-person shooter (FPS) arena game where players control egg-shaped characters in intense multiplayer combat. Inspired by *Shell Shockers*, this project is built using **Bevy 0.15.3** and targets desktop platforms.
+
+For a detailed overview of the project, see [docs/overview.md](docs/overview.md).
 
 ## Features
 
@@ -22,7 +28,11 @@ A 3D first-person shooter (FPS) arena game where players control egg-shaped char
 
 ```
 eggshot/
-├── assets/                      # Game assets: models, textures, sounds
+├── assets/                      # Game assets
+│   ├── images/                  # Game images and logos
+│   ├── models/                  # 3D models
+│   ├── textures/                # Texture files
+│   └── sounds/                  # Sound effects and music
 ├── docs/                        # Project documentation
 ├── src/                         # Game source code
 │   ├── main.rs                  # Entry point

@@ -1,5 +1,9 @@
 # Eggshot
 
+<p align="center">
+  <img src="../assets/images/eggshot_logo.png" alt="Eggshot Logo" width="300"/>
+</p>
+
 **Eggshot** is a 3D first-person shooter (FPS) arena game where players control egg-shaped characters in intense multiplayer combat. Inspired by *Shell Shockers*, this project is built using **Bevy 0.15.3** and targets desktop platforms.
 
 The game will feature:
@@ -8,7 +12,7 @@ The game will feature:
 - Modular ECS-based architecture for scalability and clarity
 - LAN support with lobby creation and ready-up system
 
-This document serves as the high-level overview of the project’s goals and architecture.
+This document serves as the high-level overview of the project's goals and architecture.
 
 For additional details, see:
 - [`requirements.md`](./requirements.md)
