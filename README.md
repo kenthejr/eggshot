@@ -4,6 +4,16 @@
   <img src="assets/images/eggshot_logo.png" alt="Eggshot Logo" width="300"/>
 </p>
 
+<div align="center">
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Rust](https://img.shields.io/badge/rust-2021_edition-blue.svg)](https://www.rust-lang.org)
+[![Bevy](https://img.shields.io/badge/Bevy-0.15.3-orange.svg)](https://bevyengine.org)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/yourusername/eggshot/actions)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+</div>
+
 A 3D first-person shooter (FPS) arena game where players control egg-shaped characters in intense multiplayer combat. Inspired by *Shell Shockers*, this project is built using **Bevy 0.15.3** and targets desktop platforms.
 
 For a detailed overview of the project, see [docs/overview.md](docs/overview.md).
